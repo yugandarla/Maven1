@@ -5,10 +5,14 @@ def buildNum = ''
 echo "Branch Name = ${branchName}"
 
 node{
-
-        cleanWs notFailBuild: true
-	checkout scm
+ cleanWs notFailBuild: true
 	props = readYaml file: 'project.yaml'
+	stage('Checkout'){
+
+          checkout scm
+         }
+       
+
 	
   
 }
