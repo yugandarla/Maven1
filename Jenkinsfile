@@ -6,8 +6,9 @@ echo "Branch Name = ${branchName}"
 
 node{
 
-cleanWs notFailBuild: true
+        cleanWs notFailBuild: true
 	checkout scm
+	props = readYaml file: 'project.yaml'
 	
   
 }
