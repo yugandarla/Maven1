@@ -4,7 +4,7 @@ def branchName = env.BRANCH_NAME.toLowerCase() //make lowercase because startsWi
 def buildNum = ''
 echo "Branch Name = ${branchName}"
 
-node{
+node('master'){
  cleanWs notFailBuild: true
 	props = readYaml file: 'project.yaml'
 	stage('Checkout'){
