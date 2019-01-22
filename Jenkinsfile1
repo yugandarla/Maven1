@@ -8,6 +8,6 @@ node{
 
 cleanWs notFailBuild: true
 	checkout scm
-	props = readYaml file: 'project.yaml'
+	//props = readYaml file: 'project.yaml'
   
 }
