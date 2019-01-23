@@ -5,7 +5,7 @@ def buildNum = ''
 echo "Branch Name = ${branchName}"
 
 node('master'){
- cleanWs notFailBuild: true
+ cleanWs notFailBuild: false
 	//props = readYaml file: 'project.yaml'
 	//def pom = readMavenPom file: 'pom.xml'
 	
@@ -15,7 +15,13 @@ node('master'){
           //checkout scm
          }
        
-
+stage('Example') {
+        if (env.BRANCH_NAME == 'master') {
+            echo 'I only execute on the master branch'
+        } else {
+            echo 'I execute other branch:' env.BRANCH_NAME
+        }
+    }
 	
   
 }
