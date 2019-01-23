@@ -5,14 +5,14 @@ def buildNum = ''
 echo "Branch Name = ${branchName}"
 
 node('master'){
- //cleanWs notFailBuild: true
+ cleanWs notFailBuild: true
 	//props = readYaml file: 'project.yaml'
 	//def pom = readMavenPom file: 'pom.xml'
 	
 	
 	stage('Checkout'){
 
-          checkout scm
+          //checkout scm
          }
        
 
