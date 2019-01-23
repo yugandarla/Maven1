@@ -19,7 +19,8 @@ stage('Example') {
         if (env.BRANCH_NAME == 'master') {
             echo 'I only execute on the master branch'
         } else {
-            echo 'I execute other branch:' ${BRANCH_NAME} 
+            echo 'I execute other branch:' 
+	    echo ${BRANCH_NAME} 
         }
     }
 	
