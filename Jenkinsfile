@@ -9,7 +9,7 @@ node('master'){
 	//props = readYaml file: 'project.yaml'
 	def pom = readMavenPom file: 'pom.xml'
 	def groupId= "${pom.groupId}"
-	echo "GroupID" "${pom.groupId}",
+	echo ${groupId}
 	stage('Checkout'){
 
           checkout scm
