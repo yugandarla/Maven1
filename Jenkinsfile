@@ -7,6 +7,8 @@ echo "Branch Name = ${branchName}"
 node('master'){
  cleanWs notFailBuild: true
 	props = readYaml file: 'project.yaml'
+	def groupId= "${pom.groupId}"
+	echo "GroupID" "${pom.groupId}",
 	stage('Checkout'){
 
           checkout scm
