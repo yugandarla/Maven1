@@ -18,6 +18,10 @@ node('master'){
 stage('Example') {
        sh 'echo $BRANCH_NAME'
     }
+
+stage('Example1') {
+       sh 'echo $BRANCH_NAME'
+    }
 	
   
 }
