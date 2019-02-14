@@ -8,7 +8,7 @@ properties([
 ])
 
 node {
-     def mvnHome =  tool name: 'maven-3', type: 'M3_HOME'   
+     def mvnHome =  tool name: 'M3_HOME', type: 'maven'   
       
     
     cleanWs notFailBuild: true
