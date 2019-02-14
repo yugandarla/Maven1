@@ -3,7 +3,7 @@
 properties([
     buildDiscarder(logRotator(numToKeepStr: '5')),
     pipelineTriggers([
-        pollSCM('H/5 * * * *')
+        pollSCM('* * * * *')
     ])
 ])
 
@@ -12,7 +12,7 @@ node {
     cleanWs notFailBuild: true
 
   
-  stage('Checkout the Code'){
+ /* stage('Checkout the Code'){
       git branch: 'development', credentialsId: 'dc9bee7b-a6ef-4ffd-a07b-7c97617a378a', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
   }
   
@@ -63,11 +63,11 @@ Bangalore
 ''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Done', to: 'devopstrainingblr@gmail.com'
   }
  
-  
+   */
    stage ('Send Slack Notification')
    {
      slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: '"Build Done"', tokenCredentialId: '193d10e7-9280-4629-84e8-5ec4a30b87b5' }
-  
+ 
   
 }
 
