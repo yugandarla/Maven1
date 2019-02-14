@@ -8,23 +8,26 @@ properties([
 ])
 
 node {
-    customWorkspace '/Users/bhaskarreddyl/BhaskarReddyL/'
+     def mvnHome =  tool name: 'maven-3', type: 'M3_HOME'   
+      
     
     cleanWs notFailBuild: true
 
   
- /* stage('Checkout the Code'){
+  stage('Checkout the Code'){
       git branch: 'development', credentialsId: 'dc9bee7b-a6ef-4ffd-a07b-7c97617a378a', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
   }
   
   stage('Build'){
       
       if(isUnix()){
-     sh 'mvn clean package'
+           sh "${mvnHome}/bin/mvn package"
+    // sh 'mvn clean package'
       }else{
-     bat 'mvn clean package'
+     //bat 'mvn clean package'
       }
   }
+    /*
   stage('SonarQubeReport'){
       
      if(isUnix()){
