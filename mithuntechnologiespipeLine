@@ -8,6 +8,7 @@ properties([
 ])
 
 node {
+    customWorkspace '/Users/bhaskarreddyl/BhaskarReddyL/'
     
     cleanWs notFailBuild: true
 
