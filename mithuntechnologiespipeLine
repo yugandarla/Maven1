@@ -8,6 +8,9 @@ properties([
 ])
 
 node {
+     echo "Current Build Absolute URL ${currentBuild.absoluteUrl}"
+     echo "Current Build Result ${currentBuild.currentResult}"
+    
      def mvnHome =  tool name: 'M3_HOME', type: 'maven'   
       
     
