@@ -1,9 +1,11 @@
 #!groovy
 
-buildDiscarder(logRotator(numToKeepStr: '3')),
+properties([
+    buildDiscarder(logRotator(numToKeepStr: '5')),
     pipelineTriggers([
-        pollSCM('* * * * *')
+        pollSCM('H/5 * * * *')
     ])
+])
 
 node {
     
