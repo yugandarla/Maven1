@@ -1,9 +1,9 @@
 #!groovy
 
 properties([
-    buildDiscarder(logRotator(numToKeepStr: '5')),
+    buildDiscarder(logRotator(numToKeepStr: '3')),
     pipelineTriggers([
-        pollSCM('* * * * *')
+        pollSCM('H/1 * * * *')
     ])
 ])
 
