@@ -1,13 +1,9 @@
 #!groovy
 
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2'))])
-
-properties([pipelineTriggers([pollSCM('* * * * *')])])
-properties([
+buildDiscarder(logRotator(numToKeepStr: '3')),
     pipelineTriggers([
-        cron('* * * * *')
+        pollSCM('* * * * *')
     ])
-])
 
 node {
     
