@@ -15,7 +15,7 @@ node('node1'){
      git branch: 'master', credentialsId: '07dd149d-4881-45a8-86ed-3cf7a77cccce', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'   
         
     }
-    /*
+    
     stage('Build'){
         
       sh "${mavenHome}/bin/mvn clean package"
@@ -29,7 +29,7 @@ node('node1'){
     stage('UploadArtifactsToNexus'){
          sh "${mavenHome}/bin/mvn clean deploy" 
     }
-    
+    /*
     stage('DeployIntoTomcat'){
       sh "echo app is deploying"    
       sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps/"  
